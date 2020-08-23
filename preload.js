@@ -1,12 +1,10 @@
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
 window.addEventListener('DOMContentLoaded', () => {
-  const replaceText = (selector, text) => {
-    const element = document.getElementById(selector)
-    if (element) element.innerText = text
+  for (const versionType of['chrome', 'electron', 'node']) {
+    document.getElementById(`${versionType}-version`).innerText = process.versions[versionType]
   }
 
-  for (const type of ['chrome', 'node', 'electron']) {
-    replaceText(`${type}-version`, process.versions[type])
-  }
+  document.getElementById('serialport-version').innerText = require('serialport/package').version
+
 })
