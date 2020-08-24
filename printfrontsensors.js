@@ -9,10 +9,16 @@ let tempsensor2 = '282099F80900000F';
 
 const parser = serialPort.pipe(new Readline({delimiter: '\r\n'}))
 parser.on('data', function (data) {
-    console.log(data)
+    // console.log(data)
     if (data.includes(tempsensor1)) {
-        console.log('tempsensor1: '. data.replace(tempsensor1, ''));
+        console.log('tempsensor1: ');
+        console.log(data)
+        document.getElementById('frontsensor1').innerText = data.trim().slice(-5);
     }
-    // console.log('tempsensor1: '.data.replace(tempsensor1, ''));
-    // console.log('tempsensor2: '.data.replace(tempsensor2, ''));
+    if (data.includes(tempsensor2)) {
+        console.log('tempsensor2: ');
+        console.log(data)
+        document.getElementById('frontsensor2').innerText = data.trim().slice(-5);
+    }
+    // data.trim().slice(-5)
 });

@@ -9,18 +9,59 @@
 
     <!-- Favicon and title -->
     <link rel="icon" href="path/to/fav.png">
-    <title>Starter template - Halfmoon</title>
+    <title>Ford bus temperature sensors</title>
 
     <!-- Halfmoon CSS -->
     <link href="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.4/css/halfmoon.min.css" rel="stylesheet"/>
 </head>
-<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
-      data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="true">
+<body data-dm-shortcut-enabled="true" data-set-preferred-theme-onload="true">
 <!-- Modals go here -->
-<!-- Reference: https://www.gethalfmoon.com/docs/modal -->
+<div class="modal" id="modal-diagnostics" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="modal-title">Diagnostics</h5>
+            <!-- Responsive table -->
+            <div class="table-responsive">
+                <table class="table table-inner-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>Software</th>
+                        <th>Version</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>NodeJS</th>
+                        <td><span id="node-version"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Chromium</th>
+                        <td><span id="chrome-version"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Electron</th>
+                        <td><span id="electron-version"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Serialport</th>
+                        <td><span id="serialport-version"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-right mt-20"> <!-- text-right = text-align: right, mt-20 = margin-top: 2rem (20px) -->
+                <a href="#" class="btn mr-5" role="button">Close</a>
+                <a href="#" class="btn btn-primary" role="button">I understand</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Page wrapper start -->
-<div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="full-height">
+<div class="page-wrapper" data-sidebar-type="full-height">
 
     <!-- Content wrapper start -->
     <div class="content-wrapper">
@@ -28,31 +69,77 @@
         <div class="container-fluid">
             <!-- First comes a content container with the main title -->
             <div class="content">
-                <h1 class="content-title font-size-22"> <!-- font-size-22 = font-size: 2.2rem (22px) -->
-                    Dashboard
-                </h1>
-                ...
-            </div>
-            <div class="row row-eq-spacing">
-                <div class="col-12 col-xl-6">
-                    We are using Node.js <span id="node-version"></span>, Chromium <span id="chrome-version"></span>,
-                    Electron <span id="electron-version"></span>, and Serialport <span id="serialport-version"></span>
-                    <div id="error">errors</div>
-                    <div id="ports">ports</div>
-                    <textarea id="incomingData"></textarea>
+                <div class="row row-eq-spacing">
+                    <div class="col-9 col-xl-9">
+                        <h1 class="content-title font-size-22"> <!-- font-size-22 = font-size: 2.2rem (22px) -->
+                            Dashboard
+                        </h1>
+                    </div>
+                    <div class="col-3 col-xl-3 text-right">
+                        <a href="#modal-diagnostics" class="btn btn-primary" role="button">Open diagnostics</a>
+                    </div>
                 </div>
             </div>
+
+            <div class="row row-eq-spacing">
+                <div class="col-6 col-xl-3 diagnostisc">
+                    <div id="error">errors</div>
+                    <div id="ports">ports</div>
+                </div>
+
+                <div class="col-6 col-xl-3">
+                    <textarea id="incomingData" class="form-control form-control-lg" disabled="disabled"
+                              readonly="readonly"></textarea>
+                </div>
+            </div>
+
             <!-- First row (equally spaced) -->
             <div class="row row-eq-spacing">
+                <div class="col-6 col-xl-6">
+                    <h2 class="content-title font-size-16">Front</h2>
+                </div>
+                <div class="col-6 col-xl-6">
+                    <span class="">@ USB...</span>
+                </div>
+                <div class="col-6 col-xl-3">
+                    <div class="card text-center">
+                        <h3 class="card-title">Temperature sensor 1</h3>
+                        <div class="font-size-20">
+                            <div class="front-sensor1" id="frontsensor1">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-6 col-xl-3">
                     <div class="card">
-                        <h2 class="card-title">Orders</h2>
+                        <h3 class="card-title text-center">Temperature sensor 2</h3>
+                        <div class="font-size-20">
+                            <div class="front-sensor2" id="frontsensor2">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row (equally spaced) -->
+            <div class="row row-eq-spacing">
+                <div class="col-6 col-xl-6">
+                    <h2 class="content-title font-size-16">Rear</h2>
+                </div>
+                <div class="col-6 col-xl-6">
+                    <span class="">@ USB...</span>
+                </div>
+                <div class="col-6 col-xl-3">
+                    <div class="card">
+                        <h3 class="card-title text-center">Temperature sensor 1</h3>
                         ...
                     </div>
                 </div>
                 <div class="col-6 col-xl-3">
                     <div class="card">
-                        <h2 class="card-title">Sales</h2>
+                        <h3 class="card-title text-center">Temperature sensor 2</h3>
                         ...
                     </div>
                 </div>
@@ -62,18 +149,32 @@
                 <!-- d-xl-none = display: none only on extra large screens (> 1200px) -->
                 <div class="col-6 col-xl-3">
                     <div class="card">
-                        <h2 class="card-title">Costs</h2>
-                        ...
-                    </div>
-                </div>
-                <div class="col-6 col-xl-3">
-                    <div class="card">
-                        <h2 class="card-title">Profits</h2>
+                        <h3 class="card-title text-center">Temperature sensor 3</h3>
                         ...
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Container-fluid -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-right">
+                    <div class="content">
+                        <h4 class="content-title font-size-16 mb-10">Made with <i
+                                class="fa fa-heart text-danger ml-5 mr-5"
+                                aria-hidden="true"></i> for developers
+                        </h4>
+                        <div class="mb-10">
+                            <a href="#top" class="btn btn-primary btn-scroll-to-top" role="button">Scroll to top</a>
+                        </div>
+                        <div class="text-muted">
+                            © Copyright 2020, DB
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- Content wrapper end -->
 
@@ -83,6 +184,7 @@
 <!-- Halfmoon JS -->
 <script src="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.4/js/halfmoon.min.js"></script>
 <script src="listports.js"></script>
-<script src="printdata.js"></script>
+<script src="printfrontsensors.js"></script>
+<script src="printrearsensors.js"></script>
 </body>
 </html>
