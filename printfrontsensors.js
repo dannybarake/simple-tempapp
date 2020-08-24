@@ -1,24 +1,37 @@
 var SerialPort = require('serialport');
-const Readline = require('@serialport/parser-readline');
+const ReadlineFront = require('@serialport/parser-readline');
 var serialPort = new SerialPort('/dev/tty.usbmodem1431101', {
     baudRate: 9600
 });
 
-let tempsensor1 = '286C08F80900007D';
-let tempsensor2 = '282099F80900000F';
+let tempfrontsensor1 = '286C08F80900007D';
+let tempfrontsensor2 = '282099F80900000F';
 
-const parser = serialPort.pipe(new Readline({delimiter: '\r\n'}))
-parser.on('data', function (data) {
+const parserFront = serialPort.pipe(new ReadlineFront({delimiter: '\r\n'}))
+parserFront.on('data', function (data) {
     // console.log(data)
-    if (data.includes(tempsensor1)) {
-        console.log('tempsensor1: ');
-        console.log(data)
-        document.getElementById('frontsensor1').innerText = data.trim().slice(-5);
+    if (data.includes(tempfrontsensor1)) {
+        let value = data.trim().slice(-5);
+        if (parseInt(value) >= 35) {
+            document.getElementById('frontsensor1').className = 'text-danger';
+        } else if (parseInt(value) >= 30) {
+            document.getElementById('frontsensor1').className = 'text-secondary';
+        } else {
+            document.getElementById('frontsensor1').className = '';
+        }
+        document.getElementById('frontsensor1').innerText = value;
     }
-    if (data.includes(tempsensor2)) {
-        console.log('tempsensor2: ');
-        console.log(data)
-        document.getElementById('frontsensor2').innerText = data.trim().slice(-5);
+
+    if (data.includes(tempfrontsensor2)) {
+        let value = data.trim().slice(-5);
+        if (parseInt(value) >= 35) {
+            document.getElementById('frontsensor2').className = 'text-danger';
+        } else if (parseInt(value) >= 30) {
+            document.getElementById('frontsensor2').className = 'text-secondary';
+        } else {
+            document.getElementById('frontsensor2').className = '';
+        }
+        document.getElementById('frontsensor2').innerText = value;
     }
     // data.trim().slice(-5)
 });
