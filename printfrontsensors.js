@@ -33,5 +33,4 @@ parserFront.on('data', function (data) {
         }
         document.getElementById('frontsensor2').innerText = value;
     }
-    // data.trim().slice(-5)
 });

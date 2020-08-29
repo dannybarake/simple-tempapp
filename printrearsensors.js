@@ -1,6 +1,6 @@
 var SerialPort = require('serialport');
 const ReadlineRear = require('@serialport/parser-readline');
-var serialPort = new SerialPort('/dev/tty.usbmodem1431101', {
+var serialPortRear = new SerialPort('/dev/tty.usbmodem1431201', {
     baudRate: 9600
 });
 
@@ -8,9 +8,9 @@ let temprearsensor1 = '286C08F80900007D';
 let temprearsensor2 = '282099F80900000F';
 let temprearsensor3 = '282099F80900000F';
 
-const parserRear = serialPort.pipe(new ReadlineRear({delimiter: '\r\n'}))
+const parserRear = serialPortRear.pipe(new ReadlineRear({delimiter: '\r\n'}))
 parserRear.on('data', function (data) {
-    // console.log(data)
+    console.log(data)
     if (data.includes(temprearsensor1)) {
         let value = data.trim().slice(-5);
         if (parseInt(value) >= 35) {

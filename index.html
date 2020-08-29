@@ -52,9 +52,20 @@
                     </tbody>
                 </table>
             </div>
-            <div class="text-right mt-20"> <!-- text-right = text-align: right, mt-20 = margin-top: 2rem (20px) -->
-                <a href="#" class="btn mr-5" role="button">Close</a>
-                <a href="#" class="btn btn-primary" role="button">I understand</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal-ports" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="modal-title">Ports</h5>
+            <!-- Responsive table -->
+            <div class="table-responsive">
+                <table class="table table-inner-bordered table-striped" id="portlist"></table>
             </div>
         </div>
     </div>
@@ -70,18 +81,21 @@
             <!-- First comes a content container with the main title -->
             <div class="content">
                 <div class="row row-eq-spacing">
-                    <div class="col-9 col-xl-9">
+                    <div class="col-6 6">
                         <h1 class="content-title font-size-22"> <!-- font-size-22 = font-size: 2.2rem (22px) -->
-                            Dashboard
+                            Dashboard temperature
                         </h1>
                     </div>
                     <div class="col-3 col-xl-3 text-right">
-                        <a href="#modal-diagnostics" class="btn btn-primary" role="button">Open diagnostics</a>
+                        <a href="#modal-diagnostics" class="btn" role="button">Open diagnostics</a>
+                    </div>
+                    <div class="col-3 col-xl-3 text-right">
+                        <a href="#modal-ports" class="btn" role="button">Show ports</a>
                     </div>
                 </div>
             </div>
 
-            <div class="row row-eq-spacing">
+            <div class="row row-eq-spacing d-none">
                 <div class="col-6 col-xl-3 diagnostisc">
                     <div id="error">errors</div>
                     <div id="ports">ports</div>
@@ -103,7 +117,7 @@
                 </div>
                 <div class="col-6 col-xl-3">
                     <div class="card text-center">
-                        <h3 class="card-title">Temperature sensor 1</h3>
+                        <h3 class="card-title">Sensor 1</h3>
                         <div class="font-size-20">
                             <div class="front-sensor1" id="frontsensor1">
 
@@ -113,7 +127,7 @@
                 </div>
                 <div class="col-6 col-xl-3">
                     <div class="card text-center">
-                        <h3 class="card-title text-center">Temperature sensor 2</h3>
+                        <h3 class="card-title text-center">Sensor 2</h3>
                         <div class="font-size-20">
                             <div class="front-sensor2" id="frontsensor2">
 
@@ -133,7 +147,7 @@
                 </div>
                 <div class="col-6 col-xl-3">
                     <div class="card text-center">
-                        <h3 class="card-title text-center">Temperature sensor 1</h3>
+                        <h3 class="card-title text-center">Ven</h3>
                         <div class="font-size-20">
                             <div class="rear-sensor1" id="rearsensor1">
 
@@ -143,7 +157,7 @@
                 </div>
                 <div class="col-6 col-xl-3">
                     <div class="card text-center">
-                        <h3 class="card-title text-center">Temperature sensor 2</h3>
+                        <h3 class="card-title text-center">Mira</h3>
                         <div class="font-size-20">
                             <div class="rear-sensor2" id="rearsensor2">
 
@@ -157,7 +171,7 @@
                 <!-- d-xl-none = display: none only on extra large screens (> 1200px) -->
                 <div class="col-6 col-xl-3">
                     <div class="card text-center">
-                        <h3 class="card-title text-center">Temperature sensor 3</h3>
+                        <h3 class="card-title text-center">Dugong</h3>
                         <div class="font-size-20">
                             <div class="rear-sensor3" id="rearsensor3">
 
@@ -167,25 +181,50 @@
                 </div>
             </div>
         </div>
-        <!-- Container-fluid -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 text-right">
-                    <div class="content">
-                        <h4 class="content-title font-size-16 mb-10">Made with <i
-                                class="fa fa-heart text-danger ml-5 mr-5"
-                                aria-hidden="true"></i> for developers
-                        </h4>
-                        <div class="mb-10">
-                            <a href="#top" class="btn btn-primary btn-scroll-to-top" role="button">Scroll to top</a>
-                        </div>
-                        <div class="text-muted">
-                            © Copyright 2020, DB
-                        </div>
+
+        <!-- Navbar fixed bottom (immediate child of the page wrapper) -->
+        <nav class="navbar navbar-fixed-bottom">
+            <!-- Navbar content with the dropup menu -->
+            <div class="navbar-content">
+                <div class="dropdown dropup with-arrow">
+                    <button class="btn" data-toggle="dropdown" type="button" id="navbar-fixed-bottom-dropdown-toggle">
+                        Help
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="navbar-fixed-bottom-dropdown-toggle">
+                        <a href="#modal-diagnostics" class="dropdown-item">Diagnostics</a>
+                        <a href="#modal-ports" class="dropdown-item">Port list</a>
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- Navbar brand -->
+            <a href="#" class="navbar-brand ml-auto"> <!-- ml-auto = margin-left: auto -->
+                <img src="..." alt="...">
+            </a>
+            <!-- Navbar text -->
+            <span class="navbar-text ml-auto text-muted"> <!-- ml-auto = margin-left: auto -->
+                 © Copyright 2020, DB
+            </span>
+        </nav>
+        <!-- Container-fluid -->
+<!--        <div class="container-fluid">-->
+<!--            <div class="row">-->
+<!--                <div class="col-12 text-right">-->
+<!--                    <div class="content">-->
+<!--                        <h4 class="content-title font-size-16 mb-10">Made with <i-->
+<!--                                class="fa fa-heart text-danger ml-5 mr-5"-->
+<!--                                aria-hidden="true"></i> for developers-->
+<!--                        </h4>-->
+<!--                        <div class="mb-10">-->
+<!--                            <a href="#top" class="btn btn-primary btn-scroll-to-top" role="button">Scroll to top</a>-->
+<!--                        </div>-->
+<!--                        <div class="text-muted">-->
+<!--                            © Copyright 2020, DB-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
     </div>
     <!-- Content wrapper end -->
