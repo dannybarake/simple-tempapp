@@ -1,10 +1,17 @@
 {
-  "name": "simple-tempapp",
+  "name": "ford-tempapp",
   "version": "1.0.0",
-  "description": "Simple temperature electron app",
+  "description": "Ford temperature electron app",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "electron-builder",
+    "package": "electron-builder --linux AppImage --armv7l --publish never"
+  },
+  "build": {
+    "appId": "com.dannybarake.fordTempApp",
+    "npmRebuild": false
   },
   "repository": "https://github.com/dannybarake/simple-tempapp",
   "keywords": [
@@ -17,11 +24,22 @@
   "author": "Danny Baraké",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.2.1",
-    "electron-rebuild": "^2.0.0",
+    "electron": "^9.3.0",
+    "electron-builder": "^22.8.0",
+    "electron-rebuild": "^2.0.3",
     "halfmoon": "^1.0.4"
   },
   "dependencies": {
     "serialport": "^9.0.1"
+  },
+  "electron-builder": {
+    "appId": "com.dannybarake.fordTempApp",
+    "linux": {
+      "target": {
+        "publish": "never",
+        "target": "appimage",
+        "arch": "armv7l"
+      }
+    }
   }
 }
