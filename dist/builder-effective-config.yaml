@@ -2,5 +2,5 @@ directories:
   output: dist
   buildResources: build
 appId: com.dannybarake.fordTempApp
-npmRebuild: false
-electronVersion: 9.3.0
+buildDependenciesFromSource: true
+electronVersion: 6.1.5

@@ -11,7 +11,7 @@
   },
   "build": {
     "appId": "com.dannybarake.fordTempApp",
-    "npmRebuild": false
+    "buildDependenciesFromSource": true
   },
   "repository": "https://github.com/dannybarake/simple-tempapp",
   "keywords": [
@@ -24,13 +24,13 @@
   "author": "Danny Baraké",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.3.0",
-    "electron-builder": "^22.8.0",
-    "electron-rebuild": "^2.0.3",
+    "electron": "6.1.5",
+    "electron-builder": "21.1.5",
+    "electron-rebuild": "1.8.8",
     "halfmoon": "^1.0.4"
   },
   "dependencies": {
-    "serialport": "^9.0.1"
+    "serialport": "8.0.7"
   },
   "electron-builder": {
     "appId": "com.dannybarake.fordTempApp",
