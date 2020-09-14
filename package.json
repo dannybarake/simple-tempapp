@@ -24,7 +24,7 @@
   "author": "Danny Baraké",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "6.1.5",
+    "electron": "7.2.4",
     "electron-builder": "21.1.5",
     "electron-rebuild": "1.8.8",
     "halfmoon": "^1.0.4"
