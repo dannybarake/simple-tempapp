@@ -37,8 +37,8 @@
     "linux": {
       "target": {
         "publish": "never",
-        "target": "appimage",
-        "arch": "armv7l"
+        "target": "deb",
+        "arch": "arm64"
       }
     }
   }
