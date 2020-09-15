@@ -2,5 +2,9 @@ directories:
   output: dist
   buildResources: build
 appId: com.dannybarake.fordTempApp
-buildDependenciesFromSource: true
-electronVersion: 6.1.5
+linux:
+  category: Network
+  target:
+    target: AppImage
+    arch: armv7l
+electronVersion: 10.1.2

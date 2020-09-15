@@ -1,9 +1,9 @@
 version: 1.0.0
 files:
   - url: ford-tempapp-1.0.0-armv7l.AppImage
-    sha512: fk3C+h1Hxia17KA5aO9ec2t1koCy5e7EyGzRDQpx43n3oSpYC1dUyHbu+p1w7pIOkM1jXp9T77NW4rT309DmLQ==
+    sha512: 0/2dfSdYb6zdi/B67TzQoQOwcKIzsDtJIqfbg/gf9iit4RZ8JqJ9mDQ2s6ZoK4vOynFPXji4MZ1Qd3GxgYTRfw==
     size: 55834272
     blockMapSize: 58776
 path: ford-tempapp-1.0.0-armv7l.AppImage
-sha512: fk3C+h1Hxia17KA5aO9ec2t1koCy5e7EyGzRDQpx43n3oSpYC1dUyHbu+p1w7pIOkM1jXp9T77NW4rT309DmLQ==
-releaseDate: '2020-09-14T20:59:45.810Z'
+sha512: 0/2dfSdYb6zdi/B67TzQoQOwcKIzsDtJIqfbg/gf9iit4RZ8JqJ9mDQ2s6ZoK4vOynFPXji4MZ1Qd3GxgYTRfw==
+releaseDate: '2020-09-14T21:11:57.353Z'

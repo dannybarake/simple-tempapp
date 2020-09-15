@@ -6,12 +6,18 @@
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "electron-builder",
-    "package": "electron-builder --linux AppImage --armv7l --publish never"
+    "install": "electron-rebuild",
+    "package": "electron-builder --linux --publish never"
   },
   "build": {
     "appId": "com.dannybarake.fordTempApp",
-    "buildDependenciesFromSource": true
+    "linux": {
+      "category": "Network",
+      "target": {
+        "target": "AppImage",
+        "arch": "armv7l"
+      }
+    }
   },
   "repository": "https://github.com/dannybarake/simple-tempapp",
   "keywords": [
@@ -24,22 +30,12 @@
   "author": "Danny Baraké",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "6.1.5",
-    "electron-builder": "21.1.5",
-    "electron-rebuild": "1.8.8",
+    "electron": "^10.1.2",
+    "electron-builder": "^22.8.0",
+    "electron-rebuild": "^2.0.3",
     "halfmoon": "^1.0.4"
   },
   "dependencies": {
-    "serialport": "8.0.7"
-  },
-  "electron-builder": {
-    "appId": "com.dannybarake.fordTempApp",
-    "linux": {
-      "target": {
-        "publish": "never",
-        "target": "deb",
-        "arch": "arm64"
-      }
-    }
+    "serialport": "^9.0.1"
   }
 }
