@@ -1,6 +1,6 @@
 var SerialPort = require('serialport');
 const ReadlineFront = require('@serialport/parser-readline');
-var serialPort = new SerialPort('/dev/tty.usbmodem1431101', {
+var serialPort = new SerialPort('/dev/ttyACM0', {
     baudRate: 9600
 });
 
