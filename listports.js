@@ -9,18 +9,15 @@ SerialPort.list().then((ports, err) => {
     if (err) {
         console.log("ERROR", err);
     } else {
-        console.log("ports found were ", ports);
         var table = document.getElementById("portlist");
 
         ports.forEach(function (port) {
-            console.log(port.path);
             var row = table.insertRow('path');
             var cellPathKey = row.insertCell(0);
             var cellPathValue = row.insertCell(1);
             cellPathKey.innerText = 'Path';
             cellPathValue.innerHTML = port.path;
 
-            console.log(port.manufacturer);
             var row = table.insertRow('manufacturer');
             var cellManuKey = row.insertCell(0);
             var cellManuValue = row.insertCell(1);

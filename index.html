@@ -12,9 +12,9 @@
     <title>Ford bus temperature sensors</title>
 
     <!-- Halfmoon CSS -->
-    <link href="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.4/css/halfmoon.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.1.1/css/halfmoon.min.css" rel="stylesheet"/>
 </head>
-<body data-dm-shortcut-enabled="true" data-set-preferred-theme-onload="true">
+<body data-set-preferred-mode-onload="true">
 <!-- Modals go here -->
 <div class="modal" id="modal-diagnostics" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -72,80 +72,91 @@
 </div>
 
 <!-- Page wrapper start -->
-<div class="page-wrapper" data-sidebar-type="full-height">
+<div class="page-wrapper">
 
     <!-- Content wrapper start -->
     <div class="content-wrapper">
         <!-- Container-fluid -->
         <div class="container-fluid">
             <!-- First row (equally spaced) -->
-            <div class="row row-eq-spacing">
-                <div class="col-6 col-xl-6">
-                    <h2 class="content-title font-size-16">Front</h2>
-                </div>
-                <div class="col-6 col-xl-6">
-                    <span class="">@ USB...</span>
-                </div>
-                <div class="col-6 col-xl-3">
-                    <div class="card text-center">
-                        <h3 class="card-title">Sensor 1</h3>
-                        <div class="font-size-20">
-                            <div class="front-sensor1" id="frontsensor1">
-                                ...
+            <div class="row">
+                <div class="col-4">
+                    <div class="row row-eq-spacing">
+                        <div class="col-6">
+                            <h2 class="content-title font-size-16 font-weight-bold">Front</h2>
+                        </div>
+                        <div class="col-6">
+                            <span class="">@ USB...</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card text-center">
+                                <h3 class="card-title">Sensor 1</h3>
+                                <div class="font-size-20">
+                                    <div class="front-sensor1" id="frontsensor1">
+                                        ...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card text-center">
+                                <h3 class="card-title text-center">Sensor 2</h3>
+                                <div class="font-size-20">
+                                    <div class="front-sensor2" id="frontsensor2">
+                                        ...
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-xl-3">
-                    <div class="card text-center">
-                        <h3 class="card-title text-center">Sensor 2</h3>
-                        <div class="font-size-20">
-                            <div class="front-sensor2" id="frontsensor2">
-                                ...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Second row (equally spaced) -->
-            <div class="row row-eq-spacing">
-                <div class="col-6 col-xl-6">
-                    <h2 class="content-title font-size-16">Rear</h2>
-                </div>
-                <div class="col-6 col-xl-6">
-                    <span class="">@ USB...</span>
-                </div>
-                <div class="col-6 col-xl-3">
-                    <div class="card text-center">
-                        <h3 class="card-title text-center">Ven</h3>
-                        <div class="font-size-20">
-                            <div class="rear-sensor1" id="rearsensor1">
-                                ...
+
+                <!-- Second row (equally spaced) -->
+                <div class="col-8">
+                    <div class="row row-eq-spacing">
+                        <div class="col-6">
+                            <h2 class="content-title font-size-16 font-weight-bold">Rear</h2>
+                        </div>
+                        <div class="col-6">
+                            <span class="">@ USB...</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card text-center">
+                                <h3 class="card-title text-center">Mira</h3>
+                                <div class="font-size-20">
+                                    <div class="rear-sensor1" id="rearsensor1">
+                                        ...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card text-center">
+                                <h3 class="card-title text-center">TBA</h3>
+                                <div class="font-size-20">
+                                    <div class="rear-sensor2" id="rearsensor2">
+                                        ...
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-xl-3">
-                    <div class="card text-center">
-                        <h3 class="card-title text-center">Mira</h3>
-                        <div class="font-size-20">
-                            <div class="rear-sensor2" id="rearsensor2">
-                                ...
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Overflow occurs here on large screens (and down) -->
-                <!-- Therefore, a v-spacer is added at this point -->
-                <div class="v-spacer d-xl-none"></div>
-                <!-- d-xl-none = display: none only on extra large screens (> 1200px) -->
-                <div class="col-6 col-xl-3">
-                    <div class="card text-center">
-                        <h3 class="card-title text-center">Dugong</h3>
-                        <div class="font-size-20">
-                            <div class="rear-sensor3" id="rearsensor3">
-                                ...
+                    <div class="row">
+                        <div class="col">
+                            <div class="card text-center">
+                                <h3 class="card-title text-center">Ven</h3>
+                                <div class="font-size-20">
+                                    <div class="rear-sensor3" id="rearsensor3">
+                                        ...
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -165,37 +176,38 @@
                     <div class="dropdown-menu" aria-labelledby="navbar-fixed-bottom-dropdown-toggle">
                         <a href="#modal-diagnostics" class="dropdown-item">Diagnostics</a>
                         <a href="#modal-ports" class="dropdown-item">Port list</a>
+                        <a href="#" onclick="halfmoon.toggleDarkMode()" class="dropdown-item">Toggle mode</a>
                     </div>
                 </div>
             </div>
             <!-- Navbar brand -->
-<!--            <a href="#" class="navbar-brand ml-auto"> &lt;!&ndash; ml-auto = margin-left: auto &ndash;&gt;-->
-<!--                <img src="..." alt="Dannybarake.nl">-->
-<!--            </a>-->
+            <!--            <a href="#" class="navbar-brand ml-auto"> &lt;!&ndash; ml-auto = margin-left: auto &ndash;&gt;-->
+            <!--                <img src="..." alt="Dannybarake.nl">-->
+            <!--            </a>-->
             <!-- Navbar text -->
             <span class="navbar-text ml-auto text-muted"> <!-- ml-auto = margin-left: auto -->
                  © Copyright 2020, DB
             </span>
         </nav>
         <!-- Container-fluid -->
-<!--        <div class="container-fluid">-->
-<!--            <div class="row">-->
-<!--                <div class="col-12 text-right">-->
-<!--                    <div class="content">-->
-<!--                        <h4 class="content-title font-size-16 mb-10">Made with <i-->
-<!--                                class="fa fa-heart text-danger ml-5 mr-5"-->
-<!--                                aria-hidden="true"></i> for developers-->
-<!--                        </h4>-->
-<!--                        <div class="mb-10">-->
-<!--                            <a href="#top" class="btn btn-primary btn-scroll-to-top" role="button">Scroll to top</a>-->
-<!--                        </div>-->
-<!--                        <div class="text-muted">-->
-<!--                            © Copyright 2020, DB-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="container-fluid">-->
+        <!--            <div class="row">-->
+        <!--                <div class="col-12 text-right">-->
+        <!--                    <div class="content">-->
+        <!--                        <h4 class="content-title font-size-16 mb-10">Made with <i-->
+        <!--                                class="fa fa-heart text-danger ml-5 mr-5"-->
+        <!--                                aria-hidden="true"></i> for developers-->
+        <!--                        </h4>-->
+        <!--                        <div class="mb-10">-->
+        <!--                            <a href="#top" class="btn btn-primary btn-scroll-to-top" role="button">Scroll to top</a>-->
+        <!--                        </div>-->
+        <!--                        <div class="text-muted">-->
+        <!--                            © Copyright 2020, DB-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
     </div>
     <!-- Content wrapper end -->
@@ -204,7 +216,7 @@
 <!-- Page wrapper end -->
 
 <!-- Halfmoon JS -->
-<script src="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.0.4/js/halfmoon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/halfmoonui/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 <script src="listports.js"></script>
 <script src="printfrontsensors.js"></script>
 <script src="printrearsensors.js"></script>
