@@ -7,4 +7,4 @@ linux:
   target:
     target: AppImage
     arch: armv7l
-electronVersion: 10.1.2
+electronVersion: 10.1.6
