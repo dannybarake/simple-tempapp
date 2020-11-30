@@ -7,7 +7,7 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "electron-rebuild",
-    "package": "electron-builder --linux --publish never"
+    "package": "electron-builder --armv7l --publish never"
   },
   "build": {
     "appId": "com.dannybarake.fordTempApp",
@@ -31,11 +31,11 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^10.1.2",
-    "electron-builder": "^22.8.0",
-    "electron-rebuild": "^2.0.3",
-    "halfmoon": "^1.0.4"
+    "electron-builder": "^22.9.1",
+    "electron-rebuild": "^2.3.2",
+    "halfmoon": "^1.1.1"
   },
   "dependencies": {
-    "serialport": "^9.0.1"
+    "serialport": "^9.0.2"
   }
 }
