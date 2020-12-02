@@ -9,7 +9,6 @@ let tempfrontsensor2 = '282099F80900000F';
 
 const parserFront = serialPort.pipe(new ReadlineFront({delimiter: '\r\n'}))
 parserFront.on('data', function (data) {
-    // console.log(data)
     if (data.includes(tempfrontsensor1)) {
         let value = data.trim().slice(-5);
         if (parseInt(value) >= 35) {

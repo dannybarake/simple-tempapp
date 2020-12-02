@@ -10,7 +10,6 @@ let temprearsensor3 = '282099F80900000F';
 
 const parserRear = serialPortRear.pipe(new ReadlineRear({delimiter: '\r\n'}))
 parserRear.on('data', function (data) {
-    console.log(data)
     if (data.includes(temprearsensor1)) {
         let value = data.trim().slice(-5);
         if (parseInt(value) >= 35) {
@@ -46,5 +45,4 @@ parserRear.on('data', function (data) {
         }
         document.getElementById('rearsensor3').innerText = value;
     }
-    // data.trim().slice(-5)
 });
