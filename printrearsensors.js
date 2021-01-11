@@ -4,9 +4,13 @@ var serialPortRear = new SerialPort('/dev/ttyACM0', {
     baudRate: 9600
 });
 
-let temprearsensor1 = '286C08F80900007D';
-let temprearsensor2 = '282099F80900000F';
-let temprearsensor3 = '282099F80900000F';
+// 28CEA33411190148 = mira
+// 28CEA33411190148 = tba
+// 281E6D5427190193 = ven
+
+let temprearsensor1 = '28CEA33411190148';
+let temprearsensor2 = '28CEA33411190148';
+let temprearsensor3 = '281E6D5427190193';
 
 const parserRear = serialPortRear.pipe(new ReadlineRear({delimiter: '\r\n'}))
 parserRear.on('data', function (data) {
