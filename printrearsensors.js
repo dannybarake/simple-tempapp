@@ -5,11 +5,11 @@ var serialPortRear = new SerialPort('/dev/ttyACM0', {
 });
 
 // 28CEA33411190148 = mira
-// 28CEA33411190148 = tba
+// 2861652F211901FC = tba
 // 281E6D5427190193 = ven
 
 let temprearsensor1 = '28CEA33411190148';
-let temprearsensor2 = '28CEA33411190148';
+let temprearsensor2 = '2861652F211901FC';
 let temprearsensor3 = '281E6D5427190193';
 
 const parserRear = serialPortRear.pipe(new ReadlineRear({delimiter: '\r\n'}))
