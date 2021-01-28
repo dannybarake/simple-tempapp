@@ -30,7 +30,7 @@
   "author": "Danny Baraké",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^10.1.2",
+    "electron": "^10.2.0",
     "electron-builder": "^22.9.1",
     "electron-rebuild": "^2.3.2",
     "halfmoon": "^1.1.1"
